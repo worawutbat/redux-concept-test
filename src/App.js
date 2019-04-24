@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import { add, del } from './ActionCrator'
 
-function App() {
+const App = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <span>
+        <div>{props.val}</div>
+        <button onClick={props.onAddClick}>+</button>
+        <button onClick={props.onDelClick}>-</button>
+      </span>
     </div>
   );
 }
 
-export default App;
+
+const mapStateToProps = (state) => {
+  return {val:state}
+}
+const mapDispatchToProps = (dispacth) => {
+  return {
+    onAddClick: () => dispacth(add()),
+    onDelClick: () => dispacth(del())
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
