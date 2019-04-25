@@ -1,15 +1,12 @@
-import React from 'react';
-import Counter from './components/Counter';
-import Todos from './components/Todos';
+import React from 'react'
+import Counter from './component/Counter'
+import Todos from './component/Todos'
 
-const App = (props) => {
-  return ( 
-    <div>
-      <Counter/>
-      <Todos/>
-    </div>
+const App = () => (
+  <div>
+    <Counter/>
+    <Todos/>
+  </div>
+)
 
-  )
-}
-
-export default App;
+export default App

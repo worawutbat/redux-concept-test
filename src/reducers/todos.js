@@ -1,7 +1,7 @@
-export default function todos(state = [], action) {
+export const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return state.concat([action.text])
+      return [...state, {text: action.text}]
     default:
       return state
   }
