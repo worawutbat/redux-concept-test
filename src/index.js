@@ -3,12 +3,16 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import { cal } from './Reducers'
+import reducer from './reducers/index'
 
+const store = createStore(reducer)
+
+console.log(store.getState())
 
 ReactDOM.render(
-    <Provider store = {createStore(cal)}>
+    <Provider store = {store}>
       <App />
     </Provider>
-  , document.getElementById('root'));
+  , document.getElementById('root')
+  );
 
