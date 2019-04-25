@@ -1,11 +1,13 @@
 import React from 'react'
 import Counter from './component/Counter'
-import Todos from './component/Todos'
+import AddTodo from './component/AddTodo'
+import List from './component/Todolist'
 
 const App = () => (
   <div>
     <Counter/>
-    <Todos/>
+    <AddTodo/>
+    <List/>
   </div>
 )
 

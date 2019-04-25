@@ -1,3 +1,3 @@
-export const addTodo = () => {
-  return { type: "ADD_TODO", text: "test"}
+export const addTodo = (t) => {
+  return { type: "ADD_TODO", text: t}
 }
